@@ -1,0 +1,18 @@
+version: '3'
+services:
+  httpd:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8101:80"
+#    volumes: 
+#      - C:\Users\iamw\Desktop\Wilmar-Aguilar\datadrive:/datadrive
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: admin
+    ports:
+      - "3306:3306"
